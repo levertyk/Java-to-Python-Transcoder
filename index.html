@@ -1,11 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="index.css">
 <head>
     <meta charset="UTF-8" />
-    <title>Java to Python Parser</title>
+    <h1>Java to Python Parser</h1>
 </head>
 
-<body></body>
+<body>
+    <div>
+        <span class="w3-left-align"><p>Enter the Java code on the right</p></span>
+        <span><button class="w3-button">Parse</button></span>
+    </div>
+
+    <table class="w3-table">
+        <tr>
+            <th>Java</th>
+            <th>Python</th>
+        </tr>
+
+        <tr>
+            <td>Paste Code Below</td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td>
+                <textarea class="w3-input w3-code" type="text" rows=100></textarea>
+            </td>
+
+            <td>
+                <code class="w3-code" id="pythonOutput"></code>
+            </td>
+        </tr>
+    </table>
+</body>
 
 </html>
