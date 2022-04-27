@@ -10,7 +10,7 @@
 <body>
     <div>
         <span class="w3-left-align"><p>Enter the Java code on the right</p></span>
-        <span><button class="w3-button">Parse</button></span>
+        <span><button onclick="parse" class="w3-button">Parse</button></span>
     </div>
 
     <table class="w3-table">
@@ -26,9 +26,10 @@
 
         <tr>
             <td>
-                <textarea class="w3-input w3-code" type="text" rows=100></textarea>
+                <textarea id="input" class="w3-input w3-code" type="text" rows=100></textarea>
             </td>
 
+            
             <td>
                 <code class="w3-code" id="pythonOutput"></code>
             </td>
@@ -37,3 +38,10 @@
 </body>
 
 </html>
+
+<script>
+    function parse() {
+        var input = document.getElementById("input");
+        document.getElementById("pythonOutput").innerHTML = input.value;
+    }
+</script>
