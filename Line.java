@@ -1,12 +1,17 @@
 public class Line {   
-    String text;
-    int scope;
-
+    //
+    String javaText="";
+    int scope=0;
+    String pythonText;
     Line(String textIn, int scopeIn){
 
-        text=textIn;
+        javaText=textIn;
         scope=scopeIn;
+       
+
     }
+
+
 
     
 }
