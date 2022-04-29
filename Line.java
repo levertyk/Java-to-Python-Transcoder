@@ -12,6 +12,18 @@ public class Line {
     }
 
 
+    @Override
+    public String toString() {
 
+        String returnThis="";
+
+        for(int i=0;i<scope;i++){
+            returnThis+="\t";
+        }
+        returnThis+=pythonText;
+
+
+        return returnThis;
+    }
     
 }
