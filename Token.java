@@ -28,10 +28,19 @@ public class Token {
 
     public void converter(){
        // String regExp=(mathExp.replaceAll("(\\d+\\.?\\d*|\\.\\d+)", "d"));
+
         pythonText=javaText;
-        pythonText=(pythonText.replaceAll("int +String +double +boolean +char ", ""));
+
+        pythonText=(pythonText.replaceAll("int |String |double |boolean |char ", ""));
+        if(pythonText.contains("for")){
+
+        }
+        if(pythonText.contains("while")){
         
-        
+        }
+        if(pythonText.contains("")){
+
+        }
 
     }
 
