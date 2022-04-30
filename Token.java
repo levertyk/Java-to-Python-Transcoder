@@ -85,14 +85,17 @@ public class Token {
 
         pythonText=javaText;
 
-        pythonText=(pythonText.replaceAll("int |String |double |boolean |char ", ""));
-        if(pythonText.contains("for")){
+        pythonText=(pythonText.replaceAll("int|String|double|boolean|char|;", ""));
+        if(pythonText.substring(0, 4).contains("for")){
+            
 
         }
-        if(pythonText.contains("while")){
+        if(pythonText.substring(0,6).contains("while")){
         
+
         }
-        if(pythonText.contains("")){
+        if(pythonText.contains("if")){
+
 
         }
 
