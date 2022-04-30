@@ -1,4 +1,4 @@
-public class baseToken extends Token {
+public class BaseToken extends Token {
 
 
     Token simpOrComp;
@@ -10,7 +10,7 @@ public class baseToken extends Token {
         if(input.startsWith("while")){
             int tempScope=0;
             for(int i=input.indexOf("{");i<input.length();i++){
-                if(input.charAt(i)=='{'){
+                if(input.charAt(i).equals('{')){
                     tempScope++;
                 }else if(input.charAt(i)=='}'){
                     
