@@ -1,5 +1,5 @@
-public class SimpleToken extends Token{
-    
+public class SimpleToken extends Token {
+
     SimpleToken(String input, int scope) {
         super(input, scope);
     }
@@ -8,8 +8,8 @@ public class SimpleToken extends Token{
     public String toString() {
         String output = "";
 
-        //  Remove the type if it exists (declarations)
-        //  Remove the semicolon at the end of the statement
+        // Remove the type if it exists (declarations)
+        // Remove the semicolon at the end of the statement
         output += input.replaceAll("int|String|double|boolean|char", "").replaceAll(";", "");
 
         return output;

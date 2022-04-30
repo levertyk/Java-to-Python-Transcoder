@@ -1,69 +1,65 @@
 public class BaseToken extends Token {
 
-
     Token simpOrComp;
     BaseToken nextBase;
-    BaseToken(String input,int scope){
+
+    BaseToken(String input, int scope) {
         super(input, scope);
 
-
-        if(input.startsWith("while")){
-            int tempScope=0;
-            int endOfComplex=0;
-            for(int i=input.indexOf("{");i<input.length();i++){
-                if(input.charAt(i)=='{'){
+        if (input.startsWith("while")) {
+            int tempScope = 0;
+            int endOfComplex = 0;
+            for (int i = input.indexOf("{"); i < input.length(); i++) {
+                if (input.charAt(i) == '{') {
                     tempScope++;
-                }else if(input.charAt(i)=='}'){
+                } else if (input.charAt(i) == '}') {
                     tempScope--;
                 }
-                if(tempScope==0){
-                    endOfComplex=i;
+                if (tempScope == 0) {
+                    endOfComplex = i;
                     break;
                 }
 
             }
-            simpOrComp=new ComplexToken(input.substring(0,endOfComplex),scope+1,false);
-            
-        }else if(input.startsWith("if")){
-            int tempScope=0;
-            int endOfComplex=0;
-            for(int i=input.indexOf("{");i<input.length();i++){
-                if(input.charAt(i)=='{'){
+            simpOrComp = new ComplexToken(input.substring(0, endOfComplex), scope + 1, false);
+
+        } else if (input.startsWith("if")) {
+            int tempScope = 0;
+            int endOfComplex = 0;
+            for (int i = input.indexOf("{"); i < input.length(); i++) {
+                if (input.charAt(i) == '{') {
                     tempScope++;
-                }else if(input.charAt(i)=='}'){
+                } else if (input.charAt(i) == '}') {
                     tempScope--;
                 }
-                if(tempScope==0){
-                    endOfComplex=i;
+                if (tempScope == 0) {
+                    endOfComplex = i;
                     break;
                 }
 
             }
-            simpOrComp=new ComplexToken(input.substring(0,endOfComplex),scope+1,false);
+            simpOrComp = new ComplexToken(input.substring(0, endOfComplex), scope + 1, false);
 
-        }else if(input.startsWith("for")){
-            int tempScope=0;
-            int endOfComplex=0;
-            for(int i=input.indexOf("{");i<input.length();i++){
-                if(input.charAt(i)=='{'){
+        } else if (input.startsWith("for")) {
+            int tempScope = 0;
+            int endOfComplex = 0;
+            for (int i = input.indexOf("{"); i < input.length(); i++) {
+                if (input.charAt(i) == '{') {
                     tempScope++;
-                }else if(input.charAt(i)=='}'){
+                } else if (input.charAt(i) == '}') {
                     tempScope--;
                 }
-                if(tempScope==0){
-                    endOfComplex=i;
+                if (tempScope == 0) {
+                    endOfComplex = i;
                     break;
                 }
 
             }
-            simpOrComp=new ComplexToken(input.substring(0,endOfComplex),scope+1,true);
-        }else if(input.indexOf(';')!=-1){
-            
+            simpOrComp = new ComplexToken(input.substring(0, endOfComplex), scope + 1, true);
+        } else if (input.indexOf(';') != -1) {
 
         }
 
     }
-        
 
-    }
-
+}

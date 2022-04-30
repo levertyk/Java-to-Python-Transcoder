@@ -1,4 +1,4 @@
-public class ClassToken extends Token{
+public class ClassToken extends Token {
 
     BaseToken middleToken;
 
@@ -7,7 +7,7 @@ public class ClassToken extends Token{
 
         BaseToken middleToken = new BaseToken(input.substring(input.indexOf('{') + 1, input.length() - 1), scope);
     }
-    
+
     @Override
     public String toString() {
         return middleToken.toString();
