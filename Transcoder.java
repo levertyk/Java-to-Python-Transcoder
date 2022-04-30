@@ -9,7 +9,7 @@ import java.io.*;
  */
 
 public class Transcoder {
-    ArrayList<Token> tokens = new ArrayList<Token>(); //TODO implement line object creation
+    ArrayList<Token> tokens = new ArrayList<Token>();
     String input;
     int scope;
 
@@ -48,9 +48,8 @@ public class Transcoder {
 
         // break up input string into tokens
         Scanner sc = new Scanner(input);
-        sc.useDelimiter(";\n");
         while (sc.hasNext()) {
-            tokens.add(new Token(sc.next(), scope));
+            // if(sc.next)
         }
     }
 
