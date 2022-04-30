@@ -57,6 +57,9 @@ public class BaseToken extends Token {
 
             }
             simpOrComp=new ComplexToken(input.substring(0,endOfComplex),scope+1,true);
+        }else if(input.indexOf(';')!=-1){
+            
+
         }
 
     }
