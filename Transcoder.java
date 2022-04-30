@@ -12,11 +12,11 @@ public class Transcoder {
     ClassToken startingToken;
 
     /**
-     * 
-     * @param input
+     * Creates a new Transcoder starting with the class token
+     * @param input string containing input
      */
     Transcoder(String input) {
-        startingToken = new ClassToken(input);
+        startingToken = new ClassToken(input.replaceAll("\\s", ""));
     }
 
     /**
