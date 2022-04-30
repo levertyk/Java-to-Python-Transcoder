@@ -1,4 +1,4 @@
-public class baseToken extends Token {
+public class BaseToken extends Token {
 
 
     Token simpOrComp;
