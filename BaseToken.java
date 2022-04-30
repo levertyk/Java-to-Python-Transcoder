@@ -5,10 +5,9 @@ public class BaseToken extends Token {
 
     BaseToken(String input, int scope) {
         super(input, scope);
-        if(input==""){
+        if (input == "") {
 
-        }
-       else if (input.startsWith("while")) {
+        } else if (input.startsWith("while")) {
             int tempScope = 0;
             int endOfComplex = 0;
             for (int i = input.indexOf("{"); i < input.length(); i++) {
@@ -59,9 +58,18 @@ public class BaseToken extends Token {
             }
             simpOrComp = new ComplexToken(input.substring(0, endOfComplex), scope + 1, true);
         } else if (input.indexOf(';') != -1) {
-            simpOrComp= new SimpleToken(input.substring(0,input.indexOf(';')), scope);
+            simpOrComp = new SimpleToken(input.substring(0, input.indexOf(';')), scope);
         }
 
+    }
+
+    @Override
+    public String toString() {
+        String output = "";
+
+        output += simpOrComp.toString() + nextBase.toString();
+
+        return output;
     }
 
 }
