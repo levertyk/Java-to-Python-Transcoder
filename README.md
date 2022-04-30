@@ -12,6 +12,8 @@ Simply run the .java file and input your java code to get the python equivalent.
     - Array
     - Boolean
 - Arithmetic operations
+    - Concatenation
 - Conditionals
 - Loops
+- Scanner
 - Methods
