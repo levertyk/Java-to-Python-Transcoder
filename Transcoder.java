@@ -9,14 +9,16 @@ import java.io.*;
  */
 
 public class Transcoder {
-    // ArrayList<Token> tokens = new ArrayList<Token>(); //TODO implement line object creation
+    ArrayList<Token> tokens = new ArrayList<Token>(); //TODO implement line object creation
     String input;
+    int scope;
 
     /** 
      * 
      */
     Transcoder() {
         input = "";
+        scope = 0;
     }
 
     /**
@@ -24,15 +26,45 @@ public class Transcoder {
      */
     Transcoder(String input) {
         this.input = input;
+        scope = 0;
     }
 
     public void addInput(String input) {
         this.input += input;
     }
 
+    private void process() {
+        // // remove all whitespace
+        // input.replaceAll("\\n", "");
+
+        // remove all public/private/static identifiers
+        input.replaceAll("[public|static|private]", "");
+
+        //remove all 
+
+        // remove java class declarations from input string
+        input.replaceAll("class\\w+{", "");     // remove initialisation
+        input.substring(0, input.length() - 1);                                // remove final '}'
+
+        // break up input string into tokens
+        Scanner sc = new Scanner(input);
+        sc.useDelimiter(";\n");
+        while (sc.hasNext()) {
+            tokens.add(new Token(sc.next(), scope));
+        }
+    }
+
+    private void simple(String token) {
+
+    }
+
     @Override
     public String toString() {
-        return "";
+        String output = "";
+        for(Token t : tokens) {
+            output += t.toString();
+        }
+        return output;
     }
 
     /**
@@ -63,7 +95,7 @@ public class Transcoder {
             System.out.println("ERROR: " + e.getMessage());         // Could not find the file
         }
 
-        // Transcoder tr = new Transcoder(input.replaceAll("\\s", ""));
+        Transcoder tr = new Transcoder(input);
 
         try {
             String outputPath = inputPath.replaceAll(".java", ".py");
