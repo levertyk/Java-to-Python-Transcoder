@@ -4,8 +4,8 @@
  * @author Peter Matern
  */
 public class Token {
-    private String input;
-    private int scope;
+    public String input;
+    public int scope;
 
     /**
      * Simple constructor initializing variables
@@ -15,6 +15,10 @@ public class Token {
     Token(String input, int scope) {
         this.input = input;
         this.scope = scope;
+    }
+
+    Token() {
+
     }
 }
 
