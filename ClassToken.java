@@ -1,17 +1,15 @@
 public class ClassToken extends Token{
 
-    Token simpORcomplex;
-    BaseToken nextBase;
+    BaseToken middleToken;
 
     ClassToken(String input) {
         super(input, 0);
 
-        if(input.startsWith("if") || input.startsWith("while") || input.startsWith("for")) {
-            //TODO make lil string tokenizer
-        } else {
-            simpORcomplex = new SimpToken(input.substring(0, input.indexOf(';')));
-            nextBase = new BaseToken(input.substring(input.indexOf(';') + 1));
-        }
+        BaseToken middleToken = new BaseToken(input.substring(input.indexOf('{') + 1, input.length() - 1), scope);
     }
     
+    @Override
+    public String toString() {
+        return middleToken.toString();
+    }
 }
