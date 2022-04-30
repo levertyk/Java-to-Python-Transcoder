@@ -22,7 +22,7 @@ public class BaseToken extends Token {
                 }
 
             }
-            simpOrComp = new ComplexToken(input.substring(0, endOfComplex), scope + 1, false);
+            simpOrComp = new ComplexToken(input.substring(0, endOfComplex), scope, false);
             nextBase= new BaseToken(input.substring(endOfComplex+1), scope);
         } else if (input.startsWith("if")) {
             int tempScope = 0;
@@ -39,7 +39,7 @@ public class BaseToken extends Token {
                 }
 
             }
-            simpOrComp = new ComplexToken(input.substring(0, endOfComplex), scope + 1, false);
+            simpOrComp = new ComplexToken(input.substring(0, endOfComplex), scope, false);
             nextBase= new BaseToken(input.substring(endOfComplex+1), scope);
         } else if (input.startsWith("for")) {
             int tempScope = 0;
@@ -56,7 +56,7 @@ public class BaseToken extends Token {
                 }
 
             }
-            simpOrComp = new ComplexToken(input.substring(0, endOfComplex), scope + 1, true);
+            simpOrComp = new ComplexToken(input.substring(0, endOfComplex), scope, true);
             nextBase= new BaseToken(input.substring(endOfComplex+1), scope);
         } else if (input.indexOf(';') != -1) {
 
