@@ -12,12 +12,12 @@ public class variableInteractionsTest {
 
         String pizza = "pizza" + getOut;
 
-        if(fdsafds){
+        if(true) {
 
         }
     }
 
     {
-        
+
     }
 }
