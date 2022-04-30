@@ -8,8 +8,12 @@ public class BaseToken extends Token {
 
         if(input.substring(0,6).contains("while")){
 
+
+        }else if(input.substring(0,3).contains("if")){
+
+        }else if(input.substring(0,4).contains("for")){
+
         }
-        else if()
 
     }
         
