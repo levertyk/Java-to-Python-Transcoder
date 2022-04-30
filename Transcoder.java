@@ -30,6 +30,7 @@ public class Transcoder {
         this.input += input;
     }
 
+    @Override
     public String toString() {
         return "";
     }
@@ -67,7 +68,9 @@ public class Transcoder {
         try {
             String outputPath = inputPath.replaceAll(".java", ".py");
             BufferedWriter writer = new BufferedWriter(new FileWriter(outputPath));
+            writer.write("heyo, she worked!!!!");       //TODO replace with transcoder output string
             // writer.write(tr.toString());
+            writer.close();
         } catch (IOException e) {
             System.out.println("ERROR: " + e.getMessage());         // Could not create output file
         }
