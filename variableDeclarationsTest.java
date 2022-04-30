@@ -5,3 +5,14 @@ public class variableDeclarationsTest {
     boolean isBad = false;
     char c = 'a';
 }
+
+/*
+
+
+    int i = 0;
+    String variableName = "cornStarch";
+    double wow = 1.0;
+    boolean isBad = false;
+    char c = 'a';
+
+*/
