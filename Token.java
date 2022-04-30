@@ -7,7 +7,7 @@ public class Token {
 
         javaText=textIn;
         scope=scopeIn;
-       
+       this.converter();
 
     }
 
@@ -25,5 +25,15 @@ public class Token {
 
         return returnThis;
     }
+
+    public void converter(){
+       // String regExp=(mathExp.replaceAll("(\\d+\\.?\\d*|\\.\\d+)", "d"));
+        pythonText=javaText;
+        pythonText=(pythonText.replaceAll("int +String +double +boolean +char ", ""));
+        
+        
+
+    }
+
     
 }
