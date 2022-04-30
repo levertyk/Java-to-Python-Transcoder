@@ -10,7 +10,6 @@ public class Token {
 
     /**
      * Simple constructor initializing variables
-     * 
      * @param input
      * @param scope
      */
@@ -19,8 +18,18 @@ public class Token {
         this.scope = scope;
     }
 
-    Token() {
+    /**
+     * Returns an amount of tabs for the scope of the token.
+     * @return String of tab characters
+     */
+    public String gimmeTabs() {
+        String output = "";
 
+        for(int i = 0; i < scope; i++) {
+            output += "\t";
+        }
+
+        return output;
     }
 }
 
