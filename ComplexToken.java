@@ -3,7 +3,7 @@ public class ComplexToken extends Token{
 
     ComplexToken(String input,int scope, boolean isForLoop){
         super(input, scope);
-this.isForLoop=isForLoop;
+    this.isForLoop=isForLoop;
 
 
 
