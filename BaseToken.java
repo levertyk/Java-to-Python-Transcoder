@@ -73,6 +73,6 @@ public class BaseToken extends Token {
         output += simpOrComp.toString() + nextBase.toString();
 
         return output;
-    }
+        }
 
 }
