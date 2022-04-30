@@ -7,12 +7,13 @@ public class BaseToken extends Token {
         super(input, scope);
 
 
-        if(input.substring(0,6).contains("while")){
+        if(input.startsWith("while")){
 
 
-        }else if(input.substring(0,3).contains("if")){
+        }else if(input.startsWith("if")){
 
-        }else if(input.substring(0,4).contains("for")){
+
+        }else if(input.startsWith("for")){
 
         }
 
