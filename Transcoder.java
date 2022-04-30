@@ -9,61 +9,22 @@ import java.io.*;
  */
 
 public class Transcoder {
-    ArrayList<Token> tokens = new ArrayList<Token>();
-    String input;
-    int scope;
+    ClassToken startingToken;
 
-    /** 
+    /**
      * 
+     * @param input
      */
-    Transcoder() {
-        input = "";
-        scope = 0;
+    Transcoder(String input) {
+        startingToken = new ClassToken(input);
     }
 
     /**
      * 
      */
-    Transcoder(String input) {
-        this.input = input;
-        scope = 0;
-    }
-
-    public void addInput(String input) {
-        this.input += input;
-    }
-
-    private void process() {
-        // // remove all whitespace
-        // input.replaceAll("\\n", "");
-
-        // remove all public/private/static identifiers
-        input.replaceAll("[public|static|private]", "");
-
-        //remove all 
-
-        // remove java class declarations from input string
-        input.replaceAll("class\\w+{", "");     // remove initialisation
-        input.substring(0, input.length() - 1);                                // remove final '}'
-
-        // break up input string into tokens
-        Scanner sc = new Scanner(input);
-        while (sc.hasNext()) {
-            // if(sc.next)
-        }
-    }
-
-    private void simple(String token) {
-
-    }
-
     @Override
     public String toString() {
-        String output = "";
-        for(Token t : tokens) {
-            output += t.toString();
-        }
-        return output;
+        return startingToken.toString();
     }
 
     /**
@@ -99,9 +60,9 @@ public class Transcoder {
         try {
             String outputPath = inputPath.replaceAll(".java", ".py");
             BufferedWriter writer = new BufferedWriter(new FileWriter(outputPath));
-            writer.write("heyo, she worked!!!!");       //TODO replace with transcoder output string
-            // writer.write(tr.toString());
+            writer.write(tr.toString());
             writer.close();
+            System.out.println("The file was successfully transcoded");
         } catch (IOException e) {
             System.out.println("ERROR: " + e.getMessage());         // Could not create output file
         }
