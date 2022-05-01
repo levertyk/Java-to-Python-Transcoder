@@ -1,4 +1,6 @@
-public class ComplexToken extends Token {
+package Tokens;
+
+class ComplexToken extends Token {
     boolean isForLoop;
     BaseToken nextBase;
 

@@ -1,4 +1,6 @@
-public class SimpleToken extends Token {
+package Tokens;
+
+class SimpleToken extends Token {
 
     SimpleToken(String input, int scope) {
         super(input, scope);

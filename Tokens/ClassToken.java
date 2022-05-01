@@ -1,3 +1,5 @@
+package Tokens;
+
 /**
  * The class token will always start the parse tree, as it is assumed the java file will
  * begin with a class. From here, a new base token is made with the inner code of the
@@ -9,7 +11,7 @@ public class ClassToken extends Token {
 
     BaseToken middleToken;
 
-    ClassToken(String input) {
+    public ClassToken(String input) {
         super(input, 0);
 
         input = input.replaceAll("\\s|public|private|protected|static", "");

@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import Tokens.ClassToken;
 import java.io.*;
 
 /**

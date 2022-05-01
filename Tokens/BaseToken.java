@@ -1,3 +1,5 @@
+package Tokens;
+
 /**
  * Base token handles the tokenization of simple and complex tokens, and nests itself
  * to tokenize the rest of the input string.
@@ -5,7 +7,7 @@
  * @author Peter Matern
  * @author Keenan Leverty
  */
-public class BaseToken extends Token {
+class BaseToken extends Token {
 
     Token simpOrComp;
     BaseToken nextBase;

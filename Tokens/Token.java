@@ -1,10 +1,12 @@
+package Tokens;
+
 /**
  * Token template class for all other tokens
  * 
  * @author <a href="mailto:keenanleverty@gmail.com">Keena Leverty</a>
  * @author Peter Matern
  */
-public class Token {
+class Token {
     public String input;
     public int scope;
 
