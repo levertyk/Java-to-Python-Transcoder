@@ -1,10 +1,9 @@
 import java.util.Scanner;
-import java.util.ArrayList;
 import java.io.*;
 
 /**
- * @author <a href="mailto:keenanleverty@gmail.com">Keenan Leverty</a>, //TODO add authors
- * 
+ * @author <a href="mailto:keenanleverty@gmail.com">Keenan Leverty</a>
+ * @author Peter Matern
  * 
  */
 
@@ -16,7 +15,7 @@ public class Transcoder {
      * @param input string containing input
      */
     Transcoder(String input) {
-        startingToken = new ClassToken(input.replaceAll("\\s", ""));
+        startingToken = new ClassToken(input);
     }
 
     /**
@@ -62,7 +61,7 @@ public class Transcoder {
             BufferedWriter writer = new BufferedWriter(new FileWriter(outputPath));
             writer.write(tr.toString());
             writer.close();
-            System.out.println("The file was successfully transcoded");
+            System.out.println("\nThe file was successfully transcoded");
         } catch (IOException e) {
             System.out.println("ERROR: " + e.getMessage());         // Could not create output file
         }
