@@ -6,6 +6,10 @@ import java.io.*;
  * @author <a href="mailto:keenanleverty@gmail.com">Keenan Leverty</a>
  * @author Peter Matern
  * 
+ * //TODO System.out.println()
+ * //TODO Scanners -> declaration and use
+ * //TODO boolean operators
+ * 
  */
 
 public class Transcoder {
