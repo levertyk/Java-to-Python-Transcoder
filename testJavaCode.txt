@@ -1,0 +1,98 @@
+import Java.util.Scanner;
+
+public class TestJavaCode.java
+    public static void main(String[] args){
+        //this program is designed to test multiple different aspects of programming
+        //the program will start with basic concepts and move to more complex systems
+        //here is the list of concepts thast will be covered
+        //syntax, comments, variables, arithmatic operations, conditionals, loops, methods, and classes
+        //the code written in this file has one more overarching goal. It must be code that is compilable in Java and then when converted to Python,
+        //must be compilable in Python as well
+        //we are going to assume that the code that would be read in as the text file must be syntactically correct and can be compiled in Java. We don't
+        //want an incorrect program to be converted to Python as it would create a syntactically incorrect Python text file
+        //project secttion done by Chris Allender
+
+        //variables
+        int a = 8;
+        int b = 4;
+        int c = 0;
+        float d = 3.14;
+        float e = 6.85;
+        float f = 0.0;
+        String animal = "dog";
+        String statement = "is good";
+        char letter1 = 'c';
+        char letter2  = 'a';
+        char letter3 = 't';
+        boolean working = true;
+        String entry;
+        boolean holdRetuurn;
+
+        word[0] = letter1;
+        word[1] = letter2;
+        word[2] = letter3;
+
+        //arithmetic operations
+        system.out.println(a + "this is var a");
+        system.out.println(b + "this is var b");
+        system.out.println(c + "this is var c");
+        system.out.println(a + b + "this is a + b");
+        c = a + b;
+        system.out.println(c + "this is a + b saved in c");
+        c = a - b;
+        system.out.println(c + "this is a - b saved in c");
+        c = a * b;
+        system.out.println(c + "this is a * b saved in c");
+        c = a / b;
+        system.out.println(c + "this is a / b saved in c");
+        c = a * (a - b);
+        system.out.println(c + "this is a * (a - b) saved in c");
+        f = d + e;
+        system.out.println(f + "this is d + e saved in c");
+        f = d * e;
+        system.out.println(f + "this is d * e saved in c");
+        system.out.println(animal);
+        system.out.println(statement);
+
+        system.out.println("enter a string");
+        system.in(entry);
+
+        if(working == true){
+            system.out.println(animal + statement);  
+        }
+
+        for(int i = 0; i < word.length(); i++){
+            systerm.out.println(letter1 + letter2 + letter3)
+        }
+
+        holdRetuurn = testFunction2(entry);
+        if(holdRetuurn == true){
+            system.out.println("you have entered a string that contains letters that make up the word 'no' ");
+        }
+        else {
+            system.out.println("you have entered a string that does not contain all letters that make up the word 'no' ");
+        }
+
+
+        
+        
+
+
+    }
+
+    boolean testFunction(String grab){
+        system.out.println("I am inside the boolean function")
+        char letterHold1 = ' ';
+        for (int i = 0; i < grab.length(); i++){
+            letterHold1 grab.charAt(i);
+            system.out.println(letterHold1)
+        }
+        if (grab.charAt(1) == 'o'){
+            retrun = true;
+        }
+        else {
+            eturn false;
+        }
+        
+    }
+}
