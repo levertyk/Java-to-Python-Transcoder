@@ -10,7 +10,7 @@ public class TestJavaCode.java
         float e = 6.85;
         float f = 0.0;
         String animal = "dog";
-        String statement = "is good";
+        String statement = "is good!";
         char letter1 = 'c';
         char letter2  = 'a';
         char letter3 = 't';
