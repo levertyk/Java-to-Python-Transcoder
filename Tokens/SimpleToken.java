@@ -16,7 +16,7 @@ class SimpleToken extends Token {
 
         // Remove the type if it exists (declarations)
         // Remove the semicolon at the end of the statement
-        output += input.replaceAll("int|String|double|boolean|char", "").replaceAll(";", "").replaceAll("=", " = ");
+        output += input.replaceAll("int|String|double|boolean|char", "").replaceAll(";", "");
 
         output += "\n";
         return output;
