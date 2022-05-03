@@ -51,6 +51,7 @@ public class ClassToken extends Token {
     private String finalChanges(String in) {
         String out = in.replaceAll("true", "True");
         out = out.replaceAll("false", "False");
+        out = out.replaceAll("([\\w\\d])+(\\W)\\2", "$1 $2= 1");
 
         return out;
     }

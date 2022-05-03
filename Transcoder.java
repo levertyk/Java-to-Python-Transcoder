@@ -7,10 +7,6 @@ import java.io.*;
  * @author Peter Matern
  * @author Chris Allender
  * 
- * //TODO System.out.println()
- * //TODO Scanners -> declaration and use
- * //TODO boolean operators
- * 
  */
 
 public class Transcoder {
