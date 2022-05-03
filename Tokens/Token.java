@@ -3,8 +3,9 @@ package Tokens;
 /**
  * Token template class for all other tokens
  * 
- * @author <a href="mailto:keenanleverty@gmail.com">Keena Leverty</a>
+ * @author Keenan Leverty
  * @author Peter Matern
+ * @author Chris Allender
  */
 class Token {
     public String input;

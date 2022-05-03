@@ -3,8 +3,9 @@ import Tokens.ClassToken;
 import java.io.*;
 
 /**
- * @author <a href="mailto:keenanleverty@gmail.com">Keenan Leverty</a>
+ * @author Keenan Leverty
  * @author Peter Matern
+ * @author Chris Allender
  * 
  * //TODO System.out.println()
  * //TODO Scanners -> declaration and use
