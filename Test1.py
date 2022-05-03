@@ -1,20 +1,14 @@
 
+bigNumbers=0
 print("Hello world!")
-x=0
-variableName="corn Starch"
-userInput=input()
-wow=1.0
-isBad=False
-c='a'
-if x==1 :
-	x+=1
+print("Please enter a number:")
+input=input()
+output="\n\n"
 i=0
-while i<10 :
-	x=i
-	if i<3 :
-		isBad=True
-		print("Kill me, please!!!!!")
-	i+=1
-while isBad :
-	wow+=1
-	isBad=False
+while i<input :
+	output+=i+" x 4 = "+i*4+"\n"
+	if i>5 :
+		bigNumbers+=1
+	i += 1
+print(output)
+print("There were "+bigNumbers+" big numbers!")

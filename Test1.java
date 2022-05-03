@@ -3,32 +3,26 @@ public class Test1 {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        int bigNumbers = 0;
 
         System.out.println("Hello world!");
 
-        int x = 0;
-        String variableName = "corn Starch";
-        String userInput = sc.next();
-        double wow = 1.0;
-        boolean isBad = false;
-        char c = 'a';
+        System.out.println("Please enter a number:");
+        int input = sc.nextInt();
 
-        if(x==1) {
-            x+=1;
-        }
+        String output = "\n\n";
 
-        for (int i = 0; i < 10; i +=1) {
-            x = i;
+        for(int i = 0; i < input; i++) {
+            output += i + " x 4 = " + i*4 + "\n";
 
-            if( i < 3) {
-                isBad = true;
-                System.out.println("Kill me, please!!!!!");
+            if(i > 5) {
+                bigNumbers += 1;
             }
         }
 
-        while(isBad) {
-            wow += 1;
-            isBad = false;
-        }
+        System.out.println(output);
+        System.out.println("There were " + bigNumbers + " big numbers!");
+
+        sc.close();
     }
 }
