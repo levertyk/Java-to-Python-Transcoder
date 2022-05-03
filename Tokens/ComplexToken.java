@@ -41,7 +41,7 @@ class ComplexToken extends Token {
                 output += gimmeTabs() + forToken.toString();
                 output += gimmeTabs() + "while " + input.substring(input.indexOf(";") + 1, input.indexOf(";", input.indexOf(";") + 1)) + " :\n";
                 output += nextBase.toString();
-                output += nextBase.gimmeTabs() + input.substring(input.indexOf(";", input.indexOf(";") + 1) + 1, input.indexOf(")"));
+                output += nextBase.gimmeTabs() + input.substring(input.indexOf(";", input.indexOf(";") + 1) + 1, input.indexOf(")")) + "\n";
                 break;
             } case 2: {
                 output += gimmeTabs();
