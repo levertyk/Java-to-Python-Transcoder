@@ -25,7 +25,7 @@ class BaseToken extends Token {
         super(input, scope);
 
         // Checks if the input is a complex token
-        isComplex = input.startsWith("while") || input.startsWith("if") || input.startsWith("for") || input.startsWith("void main");
+        isComplex = input.startsWith("while") || input.startsWith("if") || input.startsWith("for") || input.startsWith("voidmain");
 
         // If the input is nothing, do nothing
         if (input == "" || input == null) {
@@ -33,7 +33,7 @@ class BaseToken extends Token {
         } else if (isComplex) {                                                                            // if the input is complex
             addComplexToken();                                                                             // add a complex token
         } else if (input.indexOf(';') > 0) {                                                           // else the input starts with a simple token
-            simpOrComp= new SimpleToken(input.substring(0,input.indexOf(';')), scope);       // add a new simple token, ending on the first ';'
+            simpOrComp= new SimpleToken(input.substring(0,input.indexOf(';') + 1), scope);       // add a new simple token, ending on the first ';'
             nextBase= new BaseToken(input.substring(input.indexOf(';') + 1), scope);                   // add a new base token with the rest of the input
         }
 
@@ -61,7 +61,7 @@ class BaseToken extends Token {
             }
         }
 
-        return endOfComplex;
+        return endOfComplex + 1;
     }
 
     /**
@@ -74,7 +74,11 @@ class BaseToken extends Token {
         int endOfComplex = findEndOfComplex();
 
         simpOrComp = new ComplexToken(input.substring(0, endOfComplex), scope);    // add a new complex token, starting at the beginning, to the '}'
-        nextBase= new BaseToken(input.substring(endOfComplex + 1), scope);                   // add a new base token, starting after the '}', to the end
+        try {
+            nextBase= new BaseToken(input.substring(endOfComplex + 1), scope);               // add a new base token, starting after the '}', to the end
+        } catch (Exception e) {
+
+        }
     }
 
     /**
@@ -88,6 +92,8 @@ class BaseToken extends Token {
 
         if(simpOrComp != null && nextBase != null) {
             output += simpOrComp.toString() + nextBase.toString();
+        } else if (simpOrComp != null) {
+            output += simpOrComp.toString();
         }
 
         return output;

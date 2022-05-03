@@ -21,10 +21,10 @@ public class ClassToken extends Token {
 
     @Override
     public String toString() {
-        return generalChanges(middleToken.toString());
+        return finalChanges(middleToken.toString());
     }
 
-    private String generalChanges(String in) {
+    private String finalChanges(String in) {
         String out = in.replaceAll("true", "True");
         out = out.replaceAll("false", "False");
 
