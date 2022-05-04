@@ -20,9 +20,6 @@ public class Transcoder {
         startingToken = new ClassToken(input);
     }
 
-    /**
-     * 
-     */
     @Override
     public String toString() {
         return startingToken.toString();
@@ -56,6 +53,7 @@ public class Transcoder {
             System.out.println("ERROR: " + e.getMessage());         // Could not find the file
         }
 
+        // new Transcoder
         Transcoder tr = new Transcoder(input);
 
         try {

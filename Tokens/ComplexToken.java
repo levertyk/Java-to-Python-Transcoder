@@ -1,10 +1,23 @@
 package Tokens;
 
+/**
+ * ComplexToken breaks a token into complex types, loops and scoped functions. It then
+ * creates another base toekn inside of the scoped fuction.
+ * 
+ * @author Keenan Leverty
+ * @author Peter Matern
+ * @author Chris Allender
+ */
 class ComplexToken extends Token {
     BaseToken nextBase;
     SimpleToken forToken;
     int type = -1;
 
+    /**
+     * Determines what type of complex token the token is. Makes a new base token with the rest of the input.
+     * @param input String to be tokenized
+     * @param scope The scope of the token itself, used to tab in for formatting
+     */
     ComplexToken(String input, int scope) {
         super(input, scope);
         if (input.startsWith("while")) {
@@ -26,6 +39,11 @@ class ComplexToken extends Token {
 
     }
 
+    /**
+     * Formats the token based on the type given.
+     * 
+     * @return the token as a python string
+     */
     @Override
     public String toString() {
         String output = "";
@@ -37,7 +55,7 @@ class ComplexToken extends Token {
                 output += input.substring(input.indexOf("(") + 1, input.indexOf(")")) + " :\n";
                 output += nextBase.toString();
                 break;
-            } case 1: {
+            } case 1: { // Forloop broken into a while loop, uses the tokens from the inside to change the output in python
                 output += gimmeTabs() + forToken.toString();
                 output += gimmeTabs() + "while " + input.substring(input.indexOf(";") + 1, input.indexOf(";", input.indexOf(";") + 1)) + " :\n";
                 output += nextBase.toString();

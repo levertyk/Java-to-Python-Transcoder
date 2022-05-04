@@ -17,18 +17,34 @@ public class ClassToken extends Token {
     public ClassToken(String input) {
         super(input, 0);
 
+        // preserve string spaces
         input = prepare(input);
-        input = input.replaceAll("import.*\\n", "");
-        input = input.replaceAll("\\s|\\t|\\n|\\r|public|private|protected|static", "");
 
+        // remove all imports
+        input = input.replaceAll("import.*\\n", "");
+
+        // remove whitespace and qualifiers for the class and other variables
+        input = input.replaceAll("\\s|public|private|protected|static", "");
+
+        // new base token to begin tokenization
         middleToken = new BaseToken(input.substring(input.indexOf('{') + 1, input.length() - 1), scope);
     }
 
+    /**
+     * Simply return the toString of the new base token, replacing the placeholder characters
+     * inside of the strings with spaces again.
+     */
     @Override
     public String toString() {
         return finalChanges(middleToken.toString()).replaceAll("∆", " ");
     }
 
+    /**
+     * Changes the spaces in strings to a different character to preserve them.
+     * 
+     * @param in string to change
+     * @return string with spaces in strings replaced
+     */
     private String prepare(String in) {
         String result = "";
         boolean isInString = false;
@@ -48,9 +64,18 @@ public class ClassToken extends Token {
         return result;
     }
 
+    /**
+     * Makes basic python syntax changes to the given string.
+     * @param in
+     * @return
+     */
     private String finalChanges(String in) {
+        // Correct "true" and "false" syntax
         String out = in.replaceAll("true", "True");
         out = out.replaceAll("false", "False");
+
+        // replace all increments to python equivalent
+        // ex. i++ -> i += 1
         out = out.replaceAll("([\\w\\d])+(\\W)\\2", "$1 $2= 1");
 
         return out;
